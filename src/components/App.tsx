@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <NavBar history transparent actualSection={"Inicio"} />
+        
         <Route path="/" exact component={Inicio}/>
       </Router>
     )

@@ -1,0 +1,98 @@
+@font-face {
+  font-family: Nexa;
+  src: url("../fonts/NexaL.otf");
+}
+
+@font-face {
+  font-family: Nexa;
+  src: url("../fonts/NexaB.otf");
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  font-family: Nexa;
+}
+
+$azul-fuerte: rgb(9,71,82);
+$azul-claro: rgb(91,192,184);
+$rojo: rgb(238,73,73);
+$gris: rgb(167,169,172);
+$blanco: white;
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+#header {
+  display: flex;
+  height: 80px;
+  background-color: $blanco;
+  position: sticky;
+  > div {
+    width: 20%;
+    box-sizing: border-box;
+    display: flex;
+    &:first-child {
+      padding-left: 80px;
+    }
+    &:last-child {
+      padding-right: 80px;
+    }
+    > a {
+      display: flex;
+    }
+    > div {
+      margin: auto;
+      margin-right: 0;
+    }
+    img {
+      height: 60%;
+      margin: auto;
+      margin-left: 0;
+    }
+  }
+  nav {
+    width: 60%;
+    box-sizing: border-box;
+    margin: auto;
+    ol {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      font-weight: bold;
+      color: $azul-fuerte;
+      li {
+        margin: 0 10px;
+        text-transform: uppercase;
+        &:last-child {
+          margin-right: auto;
+        }
+        &:first-child {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+.boton {
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: none;
+  border: 0;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: $blanco;
+  text-transform: uppercase;
+   cursor: pointer;
+  &.rojo {
+    background-color: $rojo;
+    color: $blanco;
+  }
+}
