@@ -9,14 +9,14 @@ class Button extends Component<IButtonProps> {
             return (
                 <div>
                     <Link to={this.props.action}>
-                        <button className={`boton ${this.props.color}`}>
+                        <button className={`boton ${this.props.color} ${this.props.tamano}`}>
                             {this.props.children}
                         </button>
                     </Link>
                 </div>
             );
         } else {
-            return
+            return;
         }
     }
 }

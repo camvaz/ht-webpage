@@ -3,3 +3,7 @@ export interface INavBarProps {
     transparent: boolean;
     history: any;
 }
+
+export interface IHOCProps {
+    children: JSX.Element;
+}
