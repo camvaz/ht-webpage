@@ -7,3 +7,10 @@ export interface INavBarProps {
 export interface IHOCProps {
     children: JSX.Element;
 }
+
+export interface IEntradaBlog {
+    id: number;
+    title: string;
+    body: string;
+    foto?: string;
+}

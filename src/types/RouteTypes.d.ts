@@ -5,6 +5,8 @@ export interface IRuta {
     description: string;
     link: string;
     name: string;
+    showedImage?: string;
+    logo?: string;
 }
 
 export interface IRutas {

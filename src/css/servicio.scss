@@ -1,0 +1,57 @@
+@import "colores.scss";
+@import "responsive.scss";
+
+#servicio {
+    .definicion-servicio {
+        padding: 15px 60px;
+        display: flex;
+        flex-direction: column;
+        @media #{$tablet} {
+            padding: 20% 10%;
+        }
+        h1 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        h2 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .header-servicio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            @media #{$tablet} {
+                grid-template-columns: 1fr;
+            }
+            .flex-vertical-centered {
+                display: flex;
+                > div {
+                    margin: auto 0;
+                    height: auto;
+                    width: 60%;
+                    @media #{$tablet} {
+                        width: 100%;
+                    }
+                    > div {
+                        display: flex;
+                        flex-direction: row;
+                        > div {
+                            display: flex;
+                            flex-direction: column;
+                            margin: auto 0;
+                        }
+                        img {
+                            height: 75px;
+                            margin: auto 10px auto 0px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            img {
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+}

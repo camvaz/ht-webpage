@@ -1,7 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { routes } from "../routes/Routes";
 import ReactCompareImage from "react-compare-image";
+import IntersectionVisible from "react-intersection-visible";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
+import "../css/principal.scss";
 
 import dweblogo from "../images/web.svg";
 import seologo from "../images/seo.svg";
@@ -10,24 +14,66 @@ import cmlogo from "../images/pantalla.svg";
 import mas from "../images/mas.svg";
 import slider1 from "../images/BannerAzulXL.jpg";
 import slider2 from "../images/BannerBlancoXL.jpg";
+import slider1M from "../images/BannerAzulM.jpg";
+import slider2M from "../images/BannerBlancoM.jpg";
+import slider1S from "../images/BannerAzulS.jpg";
+import slider2S from "../images/BannerBlancoS.jpg";
 import proceso from "../images/fases.svg";
 import logovertical from "../images/logo_vertical.svg";
 import logohorizontal from "../images/logo_horizontal.svg";
 import cafe from "../images/cafe.svg";
+import facebook from "../images/facebook.svg";
+import instagram from "../images/instagram.svg";
+import whatsapp from "../images/whatsapp.svg";
+import behance from "../images/behance.svg";
+import linkedin from "../images/linkedin.svg";
 
 import Button from "./Button";
-import Responsive from "./Responsive";
+import { Desktop, Mobile, Tablet, TabletandMobile } from "./Responsive";
 
-class Inicio extends Component {
+export interface IInicioState {
+    activeTab: number;
+    sections: string[];
+}
+
+class Inicio extends Component<any, IInicioState> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            activeTab: 0,
+            sections: [
+                "slider",
+                "servicios",
+                "proceso",
+                "casos-de-exito",
+                "clientes",
+                "inicia-tu-proyecto",
+                "contacto"
+            ]
+        };
+    }
     render() {
         const plus = (
             <div className="plus">
                 <img src={mas} alt="signo de más" />
             </div>
         );
-        let clientes = this.getClientes();
+        const clientes = this.getClientes();
+        const listItems = this.state.sections.map((section, tabs) => {
+            return (
+                <AnchorLink key={tabs} href={`#${section}`}>
+                    <li
+                        className={`
+                            ${this.state.activeTab === tabs ? "active" : ""} 
+                            ${tabs === 1 || tabs === 2 ? "red" : ""}
+                            `}
+                        onClick={() => this.changeActiveTab(tabs)}
+                    />
+                </AnchorLink>
+            );
+        });
         return (
-            <Fragment>
+            <div id={"inicio"}>
                 <Helmet>
                     <title>{routes.Inicio.title}</title>
                     <link rel="canonical" href={routes.Inicio.canonical} />
@@ -36,15 +82,34 @@ class Inicio extends Component {
                         content={routes.Inicio.description}
                     />
                 </Helmet>
-                <section id="slider">
-                    <ReactCompareImage
-                        leftImage={slider1}
-                        rightImage={slider2}
-                        sliderLineColor={"transparent"}
-                    />
-                </section>
+                <ol className={"sections-map"}>{listItems}</ol>
+                <IntersectionVisible onShow={() => this.changeActiveTab(0)}>
+                    <section id="slider">
+                        <Desktop>
+                            <ReactCompareImage
+                                leftImage={slider1}
+                                rightImage={slider2}
+                                sliderLineColor={"transparent"}
+                            />
+                        </Desktop>
+                        <Tablet>
+                            <ReactCompareImage
+                                leftImage={slider1M}
+                                rightImage={slider2M}
+                                sliderLineColor={"transparent"}
+                            />
+                        </Tablet>
+                        <Mobile>
+                            <ReactCompareImage
+                                leftImage={slider1S}
+                                rightImage={slider2S}
+                                sliderLineColor={"transparent"}
+                            />
+                        </Mobile>
+                    </section>
+                </IntersectionVisible>
                 <section id="servicios">
-                    <div>
+                    <IntersectionVisible onShow={() => this.changeActiveTab(1)}>
                         <h2>Servicios</h2>
                         <p>
                             Tenemos todo lo necesario para hacer de tu negocio
@@ -62,7 +127,7 @@ class Inicio extends Component {
                                 <img src={seologo} alt="" />
                                 <h3>SEO</h3>
                             </div>
-                            {plus}
+                            <Desktop>{plus}</Desktop>
                             <div>
                                 <img src={designlogo} alt="" />
                                 <h3>
@@ -77,10 +142,15 @@ class Inicio extends Component {
                                 </h3>
                             </div>
                         </div>
+                    </IntersectionVisible>
+                    <div className={"inicia-tu-proyecto-boton"}>
+                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
+                            Inicia tu proyecto
+                        </Button>
                     </div>
                 </section>
                 <section id={"proceso"}>
-                    <div>
+                    <IntersectionVisible onShow={() => this.changeActiveTab(2)}>
                         <div>
                             <h2>
                                 ¿Cómo lo <br /> hacemos posible?
@@ -91,41 +161,75 @@ class Inicio extends Component {
                             </p>
                         </div>
                         <img src={proceso} alt="" />
+                    </IntersectionVisible>
+                    <div className={"inicia-tu-proyecto-boton"}>
+                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
+                            Inicia tu proyecto
+                        </Button>
                     </div>
                 </section>
                 <section id={"casos-de-exito"}>
-                    <div>
+                    <IntersectionVisible onShow={() => this.changeActiveTab(3)}>
                         <h2>Nuestros casos de éxito</h2>
                         <Button action={routes.Logros.link} color={"blanco"}>
                             Echar un vistazo
                         </Button>
-                    </div>
+                    </IntersectionVisible>
                 </section>
                 <section id={"clientes"}>
-                    <div>
-                        <h2>Ellos confían en nosotros</h2>
-                        <p>Nuestros clientes conocen nuestro trabajo</p>
-                    </div>
-                    <div>{clientes}</div>
-                </section>
-                <section id="inicia-tu-proyecto">
-                    <div>
-                        <h2>¿Estás listo?</h2>
-                        <p>Hagamos algo grande juntos</p>
-                        <Button
-                            action={"/inicia-tu-proyecto"}
-                            color={"rojo"}
-                            tamano={"large"}
-                        >
+                    <IntersectionVisible onShow={() => this.changeActiveTab(4)}>
+                        <div>
+                            <h2>Ellos confían en nosotros</h2>
+                            <p>Nuestros clientes conocen nuestro trabajo</p>
+                        </div>
+                        <div>{clientes}</div>
+                    </IntersectionVisible>
+                    <div className={"inicia-tu-proyecto-boton clientes"}>
+                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
                             Inicia tu proyecto
                         </Button>
                     </div>
-                    <img src={logovertical} alt="" />
                 </section>
-                <section id="contacto">
-                    <div id={"cafe"}>
-                        <div>
+                <Desktop>
+                    <section id="inicia-tu-proyecto">
+                        <IntersectionVisible
+                            onShow={() => this.changeActiveTab(5)}
+                        >
                             <div>
+                                <h2>¿Estás listo?</h2>
+                                <p>Hagamos algo grande juntos</p>
+                                <Button
+                                    action={"/inicia-tu-proyecto"}
+                                    color={"rojo"}
+                                    tamano={"large"}
+                                >
+                                    Inicia tu proyecto
+                                </Button>
+                            </div>
+                            <img src={logovertical} alt="" />
+                        </IntersectionVisible>
+                    </section>
+                </Desktop>
+
+                <TabletandMobile>
+                    <section id="inicia-tu-proyecto">
+                        <IntersectionVisible
+                            onShow={() => this.changeActiveTab(5)}
+                        >
+                            <div>
+                                <h2>¿Estás listo?</h2>
+                                <p>Hagamos algo grande juntos</p>
+                                <Button
+                                    action={"/inicia-tu-proyecto"}
+                                    color={"rojo"}
+                                    tamano={"large"}
+                                >
+                                    Inicia tu proyecto
+                                </Button>
+                            </div>
+
+                            <div>
+                                <img src={cafe} alt="Tasa de café" />
                                 <h2>¡Tomémos un café!</h2>
                                 <p>Contáctanos</p>
                                 <a href="mailto: hola@headtag.mx">
@@ -136,59 +240,103 @@ class Inicio extends Component {
                                     +52 1 222 478 8138
                                 </a>
                             </div>
-                            <img src={cafe} alt="Tasa de café" />
-                        </div>
-                    </div>
-                    <footer>
-                        <div id={"footer-site-map"}>
-                            <img src={logohorizontal} alt="" />
-                            <div>
-                                <h2>Servicios</h2>
-                                <a href="/servicios/desarrollo-web">
-                                    Desarrollo Web
-                                </a>
-                                <a href="/servicios/seo-sem">SEO / SEM</a>
-                                <a href="/servicios/diseno-grafico">
-                                    Diseño Gráfico
-                                </a>
-                                <a href="/servicios/community-management">
-                                    Community Management
-                                </a>
-                                <a href="/servicios/marketing-digital">
-                                    Marketing Digital
-                                </a>
+                        </IntersectionVisible>
+                    </section>
+                </TabletandMobile>
+
+                <section id="contacto">
+                    <IntersectionVisible onShow={() => this.changeActiveTab(6)}>
+                        <Desktop>
+                            <div id={"cafe"}>
+                                <div>
+                                    <div>
+                                        <h2>¡Tomémos un café!</h2>
+                                        <p>Contáctanos</p>
+                                        <a href="mailto: hola@headtag.mx">
+                                            hola@headtag.mx
+                                        </a>
+                                        <br />
+                                        <a href="tel: +52 1 222 478 8138">
+                                            +52 1 222 478 8138
+                                        </a>
+                                    </div>
+                                    <img src={cafe} alt="Tasa de café" />
+                                </div>
                             </div>
-                            <div>
-                                <h2>Logros</h2>
-                                <a href="/logros/nuestros-clientes">
-                                    Nuestros clientes
-                                </a>
-                                <a href="/logros/casos-de-exito">
-                                    Casos de éxito
-                                </a>
+                        </Desktop>
+                        <footer>
+                            <div id={"footer-site-map"}>
+                                <Desktop>
+                                    <img src={logohorizontal} alt="" />
+                                </Desktop>
+                                <div>
+                                    <h2>Servicios</h2>
+                                    <a href="/servicios/desarrollo-web">
+                                        Desarrollo Web
+                                    </a>
+                                    <a href="/servicios/seo-sem">SEO / SEM</a>
+                                    <a href="/servicios/diseno-grafico">
+                                        Diseño Gráfico
+                                    </a>
+                                    <a href="/servicios/community-management">
+                                        Community Management
+                                    </a>
+                                    <a href="/servicios/marketing-digital">
+                                        Marketing Digital
+                                    </a>
+                                </div>
+                                <div>
+                                    <h2>Logros</h2>
+                                    <a href="/logros/nuestros-clientes">
+                                        Nuestros clientes
+                                    </a>
+                                    <a href="/logros/casos-de-exito">
+                                        Casos de éxito
+                                    </a>
+                                </div>
+                                <div>
+                                    <h2>Cultura</h2>
+                                    <a href="/cultura/nosotros">Nosotros</a>
+                                    <a href="/cultura/mision">Misión</a>
+                                    <a href="/cultura/vision">Visión</a>
+                                    <a href="/cultura/valores">Valores</a>
+                                </div>
+                                <div>
+                                    <h2>Blog</h2>
+                                    <a href="/blog">Artículos de interés</a>
+                                </div>
+                                <div className={"social"}>
+                                    <a href="https://www.facebook.com/headtagmx/">
+                                        <img src={facebook} alt="facebook" />
+                                    </a>
+                                    <a href="https://www.instagram.com/headtagmx/">
+                                        <img src={instagram} alt="instagram" />
+                                    </a>
+                                    <a href="https://web.whatsapp.com/send?phone=522223060900&text=&source=&data=%23">
+                                        <img src={whatsapp} alt="whatsapp" />
+                                    </a>
+                                    <a href="https://www.behance.net/mxheadtag">
+                                        <img src={behance} alt="behance" />
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/headtagmx/">
+                                        <img src={linkedin} alt="linkedin" />
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <h2>Cultura</h2>
-                                <a href="/cultura/nosotros">Nosotros</a>
-                                <a href="/cultura/mision">Misión</a>
-                                <a href="/cultura/vision">Visión</a>
-                                <a href="/cultura/valores">Valores</a>
+                            <hr />
+                            <div className={"copyright"}>
+                                <p>Copyright</p>
                             </div>
-                            <div>
-                                <h2>Blog</h2>
-                                <a href="/blog">Artículos de interés</a>
-                            </div>
-                            <div></div>
-                        </div>
-                        <hr />
-                        <div className={"copyright"}>
-                            <p>Copyright</p>
-                        </div>
-                    </footer>
+                        </footer>
+                    </IntersectionVisible>
                 </section>
-            </Fragment>
+            </div>
         );
     }
+
+    private changeActiveTab = (tab: number) => {
+        this.setState({ activeTab: tab });
+    };
 
     private getClientes = () => {
         let clientes = [];
@@ -196,7 +344,6 @@ class Inicio extends Component {
             clientes.push(
                 <div key={image}>
                     <img
-                        style={{ height: "50px" }}
                         alt=""
                         src={require(`../images/Logos SVG/Cliente (${image}).svg`)}
                     />

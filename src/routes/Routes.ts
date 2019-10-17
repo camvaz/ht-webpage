@@ -6,34 +6,43 @@ export const routes: IRutas = {
         canonical: "http://headtag.mx/",
         description: "Página principal de Headtag",
         link: "/",
-        name: "Inicio",
+        name: "Inicio"
     },
     Servicios: {
         title: "Servicios | Headtag",
         canonical: "http://headtag.mx/servicios",
         description: "Servicios de Headtag",
         link: "/servicios",
-        name: "Servicios",
+        name: "Servicios"
     },
     Logros: {
         title: "Logros | Headtag",
         canonical: "http://headtag.mx/logros",
         description: "Logros de Headtag",
         link: "/logros",
-        name: "Logros",
+        name: "Logros"
     },
     Cultura: {
         title: "Cultura | Headtag",
         canonical: "http://headtag.mx/cultura",
         description: "Cultura de Headtag",
         link: "/cultura",
-        name: "Cultura",
+        name: "Cultura"
     },
     Blog: {
         title: "Blog | Headtag",
         canonical: "http://headtag.mx/blog",
         description: "Página principal de Headtag",
         link: "/blog",
-        name: "Blog",
+        name: "Blog"
+    },
+    SEOSEM: {
+        title: "SEO/SEM | Headtag",
+        canonical: "http://headtag.mx/servicios/SEO-SEM",
+        description: "Página de SEO/SEM",
+        link: "/servicios/SEO-SEM",
+        name: "SEO / SEM",
+        showedImage: "SEO.svg",
+        logo: "seo.svg"
     }
 };

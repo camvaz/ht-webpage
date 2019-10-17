@@ -1,7 +1,15 @@
 import { Component } from "react";
-import { IButtonProps } from "../types/ComponentTypes";
+
 import React from "react";
 import { Link } from "react-router-dom";
+
+export interface IButtonProps {
+    action?: string;
+    color: string;
+    tamano?: string;
+    onClick?: () => void;
+    disabled?: boolean;
+}
 
 class Button extends Component<IButtonProps> {
     render() {
@@ -9,14 +17,28 @@ class Button extends Component<IButtonProps> {
             return (
                 <div>
                     <Link to={this.props.action}>
-                        <button className={`boton ${this.props.color} ${this.props.tamano}`}>
+                        <button
+                            className={`boton ${this.props.color} ${this.props.tamano}`}
+                        >
                             {this.props.children}
                         </button>
                     </Link>
                 </div>
             );
         } else {
-            return;
+            return (
+                <div>
+                    <button
+                        className={`boton ${this.props.color} ${
+                            this.props.tamano
+                        } ${this.props.disabled ? "disabled" : ""}`}
+                        onClick={this.props.onClick}
+                        disabled={this.props.disabled}
+                    >
+                        {this.props.children}
+                    </button>
+                </div>
+            );
         }
     }
 }

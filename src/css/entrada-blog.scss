@@ -1,0 +1,97 @@
+@import "colores.scss";
+@import "responsive.scss";
+
+#blog-entry {
+    .cover {
+        height: 50vh;
+        background-color: $gris-claro;
+        position: relative;
+        .blog-entry-data {
+            height: 200px;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            background-color: white;
+            position: absolute;
+            left: 10%;
+            bottom: 0;
+            transform: translateY(50%);
+            @media #{$tablet} {
+                width: 300px;
+                transform: translate(-50%, 50%);
+                left: 50%;
+            }
+            div {
+                margin: auto;
+            }
+            h1 {
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            h2 {
+                font-weight: normal;
+                margin: 0;
+            }
+            p {
+                color: $gris-claro;
+                &:first-of-type {
+                    margin-bottom: 0;
+                }
+                &:last-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .blog-entry-body {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10%;
+        display: grid;
+        grid-template-columns: 350px auto;
+        row-gap: 30px;
+        @media #{$tablet} {
+            grid-template-columns: 1fr;
+            margin-top: 100px;
+        }
+        h2 {
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+        > img {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            object-fit: cover;
+            background-color: $gris-claro;
+            min-height: 200px;
+        }
+        > div {
+            padding-top: 20px;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            padding-left: 50px;
+            border-left: 2px solid $gris-claro;
+            @media #{$tablet} {
+                padding-left: 0;
+                border-left: 0;
+            }
+            img {
+                width: 300px;
+                height: 200px;
+                background-color: $gris-claro;
+                display: block;
+                margin: 30px 0 0;
+            }
+        }
+        hr {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            width: 100%;
+            border-color: $gris-claro;
+            margin-top: 10%;
+        }
+    }
+}

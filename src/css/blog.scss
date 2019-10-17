@@ -1,0 +1,89 @@
+@import "colores.scss";
+@import "responsive.scss";
+
+#blog {
+    .definicion-blog {
+        padding: 15px 60px;
+        display: flex;
+        flex-direction: column;
+        @media #{$tablet} {
+            padding: 20% 10%;
+        }
+        h1 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        h2 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .header-blog {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            @media #{$tablet} {
+                grid-template-columns: 1fr;
+            }
+            .flex-vertical-centered {
+                display: flex;
+                div {
+                    margin: auto 0;
+                    height: auto;
+                    width: 60%;
+                    @media #{$tablet} {
+                        width: 100%;
+                    }
+                }
+            }
+            img {
+                width: 90%;
+                margin: auto;
+            }
+        }
+        #blog-list {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            margin: auto;
+            grid-row-gap: 50px;
+            grid-column-gap: 5%;
+            text-align: center;
+            width: 100%;
+            @media #{$tablet} {
+                grid-template-columns: 45% 45%;
+            }
+            .entrada-preview {
+                a {
+                    display: block;
+                }
+                .foto {
+                    height: 250px;
+                    @media #{$tablet} {
+                        height: 100px;
+                    }
+                    div {
+                        height: 100%;
+                        background-color: $gris-claro;
+                    }
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                h2 {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 100%;
+                    margin: 15px auto 0;
+                    font-weight: bold;
+                    @media #{$tablet} {
+                        font-weight: normal;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+    .boton-ver-mas {
+        margin: 10% auto 0;
+    }
+}
