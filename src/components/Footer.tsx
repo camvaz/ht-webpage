@@ -18,7 +18,7 @@ export const Footer = () => {
             <div id={"cafe"}>
                 <div>
                     <div>
-                        <h2>¡Tomémos un café!</h2>
+                        <h2>¡Te invitamos un café!</h2>
                         <p>Contáctanos</p>
                         <a href="mailto: hola@headtag.mx">hola@headtag.mx</a>
                         <br />

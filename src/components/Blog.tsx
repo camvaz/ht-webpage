@@ -35,19 +35,14 @@ export class Blog extends React.Component<IBlogProps, IBlogState> {
                         <div className={"flex-vertical-centered"}>
                             <div>
                                 <h1>Blog</h1>
-                                <h2>Subtitulos</h2>
+                                <h2>Artículos e información</h2>
                                 <p>
-                                    Aquí encontrarás toda la información
-                                    relacionada a marketing digital, diseño,
-                                    SEO, desarrollo y muchos masAquí encontrarás
-                                    toda la información relacionada a marketing
-                                    digital, diseño, SEO, desarrollo y muchos
-                                    masAquí encontrarás toda la información
-                                    relacionada a marketing digital, diseño,
-                                    SEO, desarrollo y muchos masAquí encontrarás
-                                    toda la información relacionada a marketing
-                                    digital, diseño, SEO, desarrollo y muchos
-                                    mas
+                                    En esta sección de nuestra página web,
+                                    semanalmente compartiremos contigo
+                                    información, tips y noticias relacionadas
+                                    con el mundo del marketing digital,
+                                    desarrollo web, diseño, SEO y redes
+                                    sociales.
                                 </p>
                             </div>
                         </div>

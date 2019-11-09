@@ -1,0 +1,99 @@
+@import "colores.scss";
+@import "responsive.scss";
+
+#clientes {
+    .definicion-servicio {
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        h1 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+        h2 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .header-servicio {
+            padding: 0 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            @media #{$tablet} {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+            .flex-vertical-centered {
+                display: flex;
+                @media #{$tablet} {
+                    padding: 10% 10% 0;
+                }
+                > div {
+                    margin: auto 0;
+                    height: auto;
+                    width: 100%;
+                    @media #{$tablet} {
+                        width: 100%;
+                    }
+                    > div {
+                        display: flex;
+                        flex-direction: row;
+                        > div {
+                            display: flex;
+                            flex-direction: column;
+                            margin: auto 0;
+                        }
+                        img {
+                            height: 75px;
+                            margin: auto 10px auto 0px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            img {
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+    .clientes {
+        background-color: $gris-claro;
+        color: $gris-fuerte;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0;
+        @media #{$tablet} {
+            height: 100%;
+        }
+        h2 {
+            color: $gris-fuerte;
+        }
+        p {
+            color: $gris-fuerte;
+        }
+        > div:first-child {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+        > div:last-child {
+            display: grid;
+            grid-row-gap: 45px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            overflow: auto;
+            @media #{$tablet} {
+                grid-template-columns: 30% 30% 30%;
+                grid-row-gap: 10px;
+                grid-column-gap: 5%;
+            }
+            img {
+                width: 75%;
+            }
+        }
+    }
+}

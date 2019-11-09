@@ -68,8 +68,12 @@
             .servicios {
                 display: flex;
                 padding-top: 50px;
-                div {
+                a {
                     width: 20%;
+                    display: block;
+                }
+                div {
+                    width: 100%;
                     img {
                         height: 150px;
                     }

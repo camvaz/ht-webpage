@@ -111,36 +111,42 @@ class Inicio extends Component<any, IInicioState> {
                 <section id="servicios">
                     <IntersectionVisible onShow={() => this.changeActiveTab(1)}>
                         <h2>Servicios</h2>
-                        <p>
-                            Tenemos todo lo necesario para hacer de tu negocio
-                            el mejor:{" "}
-                        </p>
+                        <p>¿Cómo te podemos ayudar a mejorar tu empresa?</p>
                         <div className="servicios">
-                            <div>
-                                <img src={dweblogo} alt="" />
-                                <h3>
-                                    Desarrollo <br /> Web
-                                </h3>
-                            </div>
+                            <a href="/servicios/desarrollo-web">
+                                <div>
+                                    <img src={dweblogo} alt="" />
+                                    <h3>
+                                        Desarrollo <br /> Web
+                                    </h3>
+                                </div>
+                            </a>
                             {plus}
-                            <div>
-                                <img src={seologo} alt="" />
-                                <h3>SEO</h3>
-                            </div>
+                            <a href="/servicios/seo-sem">
+                                <div>
+                                    <img src={seologo} alt="" />
+                                    <h3>SEO/SEM</h3>
+                                </div>
+                            </a>
                             <Desktop>{plus}</Desktop>
-                            <div>
-                                <img src={designlogo} alt="" />
-                                <h3>
-                                    Diseño <br /> gráfico
-                                </h3>
-                            </div>
+                            <a href="/servicios/diseno-grafico">
+                                <div>
+                                    <img src={designlogo} alt="" />
+                                    <h3>
+                                        Diseño <br /> gráfico
+                                    </h3>
+                                </div>
+                            </a>
                             {plus}
-                            <div>
-                                <img src={cmlogo} alt="" />
-                                <h3>
-                                    Community <br /> management
-                                </h3>
-                            </div>
+
+                            <a href="/servicios/community-management">
+                                <div>
+                                    <img src={cmlogo} alt="" />
+                                    <h3>
+                                        Community <br /> management
+                                    </h3>
+                                </div>
+                            </a>
                         </div>
                     </IntersectionVisible>
                     <div className={"inicia-tu-proyecto-boton"}>
@@ -179,8 +185,12 @@ class Inicio extends Component<any, IInicioState> {
                 <section id={"clientes"}>
                     <IntersectionVisible onShow={() => this.changeActiveTab(4)}>
                         <div>
-                            <h2>Ellos confían en nosotros</h2>
-                            <p>Nuestros clientes conocen nuestro trabajo</p>
+                            <h2>Ellos ya confiaron en nosotros</h2>
+                            <p>
+                                ¡Déjanos ser parte de tu éxito! / ¡Se parte de
+                                nuestros casos de éxito! / ¡Haz crecer tu
+                                empresa como ellos!
+                            </p>
                         </div>
                         <div>{clientes}</div>
                     </IntersectionVisible>
@@ -196,8 +206,11 @@ class Inicio extends Component<any, IInicioState> {
                             onShow={() => this.changeActiveTab(5)}
                         >
                             <div>
-                                <h2>¿Estás listo?</h2>
-                                <p>Hagamos algo grande juntos</p>
+                                <h2>¿Quieres que tu empresa crezca?</h2>
+                                <p>
+                                    Trabaja con nosotros para alcanzar tus
+                                    objetivos
+                                </p>
                                 <Button
                                     action={"/inicia-tu-proyecto"}
                                     color={"rojo"}
@@ -217,8 +230,11 @@ class Inicio extends Component<any, IInicioState> {
                             onShow={() => this.changeActiveTab(5)}
                         >
                             <div>
-                                <h2>¿Estás listo?</h2>
-                                <p>Hagamos algo grande juntos</p>
+                                <h2>¿Quieres que tu empresa crezca?</h2>
+                                <p>
+                                    Trabaja con nosotros para alcanzar tus
+                                    objetivos
+                                </p>
                                 <Button
                                     action={"/inicia-tu-proyecto"}
                                     color={"rojo"}
@@ -230,7 +246,7 @@ class Inicio extends Component<any, IInicioState> {
 
                             <div>
                                 <img src={cafe} alt="Tasa de café" />
-                                <h2>¡Tomémos un café!</h2>
+                                <h2>¡Te invitamos un café!</h2>
                                 <p>Contáctanos</p>
                                 <a href="mailto: hola@headtag.mx">
                                     hola@headtag.mx
@@ -250,7 +266,7 @@ class Inicio extends Component<any, IInicioState> {
                             <div id={"cafe"}>
                                 <div>
                                     <div>
-                                        <h2>¡Tomémos un café!</h2>
+                                        <h2>¡Te invitamos un café!</h2>
                                         <p>Contáctanos</p>
                                         <a href="mailto: hola@headtag.mx">
                                             hola@headtag.mx

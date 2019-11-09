@@ -3,12 +3,9 @@
 
 #servicio {
     .definicion-servicio {
-        padding: 15px 60px;
+        padding: 15px 0;
         display: flex;
         flex-direction: column;
-        @media #{$tablet} {
-            padding: 20% 10%;
-        }
         h1 {
             margin: 0;
             text-transform: uppercase;
@@ -18,17 +15,22 @@
             font-weight: normal;
         }
         .header-servicio {
+            padding: 0 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             @media #{$tablet} {
                 grid-template-columns: 1fr;
+                padding: 0;
             }
             .flex-vertical-centered {
                 display: flex;
+                @media #{$tablet} {
+                    padding: 10% 10% 0;
+                }
                 > div {
                     margin: auto 0;
                     height: auto;
-                    width: 60%;
+                    width: 100%;
                     @media #{$tablet} {
                         width: 100%;
                     }
@@ -52,6 +54,126 @@
                 width: 90%;
                 margin: auto;
             }
+        }
+    }
+    .microservicios {
+        display: grid;
+        grid-auto-flow: column;
+        width: 100%;
+        overflow-y: auto;
+        .principal {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 60% auto;
+            @media #{$tablet} {
+                width: 200vw;
+                height: 50vh;
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            img {
+                width: 100%;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                margin: 0 35px;
+                h2 {
+                    font-weight: bold;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .microservicio {
+            width: 20vw;
+            height: 100%;
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            padding: 45% 20px 20px;
+            box-sizing: border-box;
+            justify-content: space-between;
+            @media #{$tablet} {
+                width: 75vw;
+                height: 50vh;
+                padding: 10px 10px 10px;
+            }
+
+            img {
+                opacity: 0;
+
+                @media #{$tablet} {
+                    margin: auto;
+                    width: 50%;
+                }
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 2.5em;
+
+                @media #{$tablet} {
+                    text-align: center;
+                    margin: auto;
+                }
+            }
+            &:nth-of-type(odd) {
+                background-color: $azul-claro;
+            }
+            &:nth-of-type(even) {
+                background-color: $azul-claro-opaco;
+            }
+            &:hover {
+                background-color: $azul-fuerte;
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+        .estas-listo {
+            width: 50vw;
+            display: grid;
+            grid-template-columns: auto 65% auto;
+            @media #{$tablet} {
+                text-align: center;
+                margin: auto;
+                width: 100vw;
+            }
+            div {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2 {
+                    font-weight: bold;
+                }
+                p {
+                    margin: 0 0 10px;
+                }
+            }
+            img {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                margin: auto;
+            }
+        }
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 25px;
+            background-color: $gris-claro;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $azul-claro;
         }
     }
 }
