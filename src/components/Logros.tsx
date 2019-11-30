@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 
-import cultura from "../images/Cultura.svg";
+import logros from "../images/logros.svg";
+import logovertical from "../images/logo_vertical.svg";
 import "../css/logros.scss";
 
 import { Footer } from "./Footer";
 import { routes } from "../routes/Routes";
 import { RouteComponentProps } from "react-router";
+import { clientPairs, clientPairsWeb } from "../constants/constants";
+import Button from "./Button";
 
-export class Logros extends Component<RouteComponentProps> {
+export class Logros extends Component<RouteComponentProps, any> {
     constructor(props: RouteComponentProps) {
         super(props);
-        this.state = { clienteSeleccionado: null };
+        this.state = {
+            clienteSeleccionado: "laescuadra",
+            webSeleccionada: "https://laescuadra.mx/"
+        };
     }
     render() {
         return (
@@ -21,7 +27,7 @@ export class Logros extends Component<RouteComponentProps> {
                     <link rel="canonical" href={routes.Logros.canonical} />
                     <meta
                         name="description"
-                        content={routes.Cultura.description}
+                        content={routes.Logros.description}
                     />
                 </Helmet>
                 <section className="definicion-servicio">
@@ -54,11 +60,64 @@ export class Logros extends Component<RouteComponentProps> {
                                 </p>
                             </div>
                         </div>
-                        <img src={cultura} alt="" />
+                        <img src={logros} alt="" />
                     </div>
                     <div className="clientes">
                         <div>{this.clientes}</div>
                     </div>
+                    {this.state.clienteSeleccionado && (
+                        <div className={"cliente-container"}>
+                            <div>
+                                <img
+                                    src={require(`../images/Logros/${this.state.clienteSeleccionado}/logo.svg`)}
+                                    alt=""
+                                    className="logo"
+                                />
+                                <img
+                                    src={require(`../images/Logros/${this.state.clienteSeleccionado}/1.jpg`)}
+                                    alt=""
+                                    className="foto"
+                                />
+                            </div>
+                            <div>
+                                <img
+                                    src={require(`../images/Logros/${this.state.clienteSeleccionado}/2.jpg`)}
+                                    alt=""
+                                    className="foto"
+                                />
+                            </div>
+                            <div>
+                                <img
+                                    src={require(`../images/Logros/${this.state.clienteSeleccionado}/3.jpg`)}
+                                    alt=""
+                                    className="foto"
+                                />
+                            </div>
+                            <div className={"visita"}>
+                                <a href={this.state.webSeleccionada}>
+                                    <h2>Visita el sitio: </h2>
+                                    <p>{this.state.webSeleccionada}</p>
+                                </a>
+                            </div>
+                            <div className="estas-listo">
+                                <div>
+                                    <h2>¿Quieres que tu empresa crezca?</h2>
+                                    <p>
+                                        Trabaja con nosotros para alcanzar tus
+                                        objetivos
+                                    </p>
+                                    <Button
+                                        action={"/inicia-tu-proyecto"}
+                                        color={"rojo"}
+                                        tamano={"large"}
+                                    >
+                                        Inicia tu proyecto
+                                    </Button>
+                                </div>
+                                <img src={logovertical} alt="" />
+                            </div>
+                        </div>
+                    )}
                 </section>
                 <Footer />
             </div>
@@ -70,14 +129,24 @@ export class Logros extends Component<RouteComponentProps> {
         for (let image = 1; image <= 24; image++) {
             clientes.push(
                 <div
+                    className={"marcas-container"}
                     key={image}
                     onClick={() =>
-                        this.setState({ clienteSeleccionado: image })
+                        this.setState({
+                            clienteSeleccionado: clientPairs[image - 1],
+                            webSeleccionada: clientPairsWeb[image - 1]
+                        })
                     }
                 >
                     <img
                         alt=""
                         src={require(`../images/Logos SVG/Cliente (${image}).svg`)}
+                        className="gris"
+                    />
+                    <img
+                        alt=""
+                        className="color"
+                        src={require(`../images/Logos SVG/Cliente (${image})-color.svg`)}
                     />
                 </div>
             );

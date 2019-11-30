@@ -93,7 +93,101 @@
             }
             img {
                 width: 75%;
+                cursor: pointer;
             }
+            .marcas-container {
+                position: relative;
+                img.gris {
+                    position: relative;
+                }
+                img.color {
+                    position: absolute;
+                }
+            }
+        }
+    }
+    .cliente-container {
+        display: grid;
+        grid-auto-flow: column;
+        width: 100%;
+        overflow-y: auto;
+        > div {
+            position: relative;
+            width: 60vw;
+            height: 500px;
+            overflow: hidden;
+            > img.logo {
+                width: 150px;
+                position: absolute;
+                bottom: 50px;
+                left: 50px;
+            }
+            img.foto {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+            @media #{$tablet} {
+                width: 100vw;
+            }
+        }
+
+        .visita {
+            width: 35vw;
+            background-color: $azul-fuerte;
+            color: $blanco;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            a {
+                height: auto;
+                margin: auto;
+            }
+            @media #{$tablet} {
+                width: 100vw;
+            }
+        }
+
+        .estas-listo {
+            width: 50vw;
+            display: grid;
+            grid-template-columns: auto 65% auto;
+            @media #{$tablet} {
+                text-align: center;
+                margin: auto;
+                width: 100vw;
+            }
+            div {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2 {
+                    font-weight: bold;
+                }
+                p {
+                    margin: 0 0 10px;
+                }
+            }
+            img {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                margin: auto;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 25px;
+            background-color: $gris-claro;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $azul-claro;
         }
     }
 }

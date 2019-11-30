@@ -1,11 +1,11 @@
 import { Component, Fragment } from "react";
 import React from "react";
 import { INavBarProps } from "../types/SiteTypes";
-import { Link } from "react-router-dom";
 import { routes } from "../routes/Routes";
 import logo from "../images/logo.svg";
 import Button from "./Button";
 import { Desktop } from "./Responsive";
+import { HashLink as Link } from "react-router-hash-link";
 
 export class NavBar extends Component<INavBarProps> {
     render() {
@@ -21,7 +21,10 @@ export class NavBar extends Component<INavBarProps> {
                         <nav>
                             <ol>
                                 <li>
-                                    <Link to={routes.Servicios.link}>
+                                    <Link
+                                        to={routes.Servicios.link}
+                                        smooth={true}
+                                    >
                                         {routes.Servicios.name}
                                     </Link>
                                 </li>
