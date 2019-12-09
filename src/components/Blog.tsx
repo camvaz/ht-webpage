@@ -74,7 +74,8 @@ export class Blog extends React.Component<IBlogProps, IBlogState> {
     componentDidMount() {
         fetch("https://jsonplaceholder.typicode.com/posts")
             .then(data => data.json())
-            .then(entradas => this.setState({ blog: { entradas } }));
+            .then(entradas => this.setState({ blog: { entradas } }))
+            .catch(error => console.log(error));
     }
 
     getPreviewEntradas = () => {

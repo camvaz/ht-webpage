@@ -45,7 +45,7 @@ export const routes: IRutas = {
         title: "SEO/SEM | Headtag",
         canonical: "http://headtag.mx/servicios/SEO-SEM",
         description:
-            "Con nuestra estrategia, tu sitio web aparecerá en la primera página de Google cuando la gente busque tus productos o servicios, con lo que aumentarás tus ventas.",
+            "Con nuestra estrategia, tu sitio web aparecerá en la primera página de Google \n cuando la gente busque tus productos o servicios, \n con lo que aumentarás tus ventas.",
         link: "/servicios/SEO-SEM",
         name: "SEO / SEM",
         showedImage: "SEO.svg",
@@ -87,7 +87,7 @@ export const routes: IRutas = {
         title: "Diseño Gráfico | Headtag",
         canonical: "http://headtag.mx/servicios/diseno-grafico",
         description:
-            "A través del desarrollo de la identidad corporativa, branding y papelería para tu empresa, creamos una marca memorable que llame la atención de tus posibles clientes, cuidando la personalidad que quieras transmitir.",
+            "A través del desarrollo de la identidad corporativa, branding y  \npapelería para tu empresa, creamos una marca \n memorable que llame la atención de tus posibles clientes, \n cuidando la personalidad que quieras transmitir.",
         link: "/servicios/diseno-grafico",
         name: "Diseño Gráfico",
         showedImage: "DISENOGRAFICO.svg",
@@ -107,7 +107,7 @@ export const routes: IRutas = {
         title: "Community Management | Headtag",
         canonical: "http://headtag.mx/servicios/community-management",
         description:
-            "Por medio de la creación y promoción de contenido en las principales plataformas digitales (Facebook, Instagram, YouTube), logramos que tu cliente ideal reconozca tu marca.",
+            "Por medio de la creación y promoción de contenido en las principales \n plataformas digitales (Facebook, Instagram, YouTube), \n logramos que tu cliente ideal reconozca tu marca.",
         link: "/servicios/community-management",
         name: "Community Management",
         showedImage: "MARKETING.svg",
@@ -123,6 +123,6 @@ export const routes: IRutas = {
         imagenMicroservicios: "mock.jpg",
         tituloMicroservicios: "Community Management",
         textoMicroservicios:
-            "Por medio de la creación y promoción de contenido en las principales plataformas digitales (Facebook, Instagram, YouTube), logramos que tu cliente ideal reconozca tu marca."
+            "Por medio de la creación y promoción de contenido en las principales plataformas  digitales (Facebook, Instagram, YouTube), logramos que tu cliente ideal reconozca tu marca."
     }
 };

@@ -102,6 +102,17 @@
                 }
                 img.color {
                     position: absolute;
+                    left: 0;
+                    visibility: hidden;
+                }
+            }
+            .marcas-container:hover,
+            .marcas-container.activo {
+                img.gris {
+                    visibility: hidden;
+                }
+                img.color {
+                    visibility: visible;
                 }
             }
         }

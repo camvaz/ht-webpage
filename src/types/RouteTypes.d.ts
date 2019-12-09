@@ -2,7 +2,7 @@ export interface IRuta {
     canonical?: string;
     title: string;
     ogImage?: string;
-    description: string;
+    description: any;
     link: string;
     name: string;
     showedImage?: string;

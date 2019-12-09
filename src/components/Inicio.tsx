@@ -37,8 +37,10 @@ export interface IInicioState {
 }
 
 class Inicio extends Component<any, IInicioState> {
+    serviciosRef: any;
     constructor(props: any) {
         super(props);
+        this.serviciosRef = React.createRef();
         this.state = {
             activeTab: 0,
             sections: [
@@ -52,6 +54,7 @@ class Inicio extends Component<any, IInicioState> {
             ]
         };
     }
+
     render() {
         const plus = (
             <div className="plus">
@@ -108,7 +111,7 @@ class Inicio extends Component<any, IInicioState> {
                         </Mobile>
                     </section>
                 </IntersectionVisible>
-                <section id="servicios">
+                <section id="servicios" ref={this.serviciosRef}>
                     <IntersectionVisible onShow={() => this.changeActiveTab(1)}>
                         <h2>Servicios</h2>
                         <p>¿Cómo te podemos ayudar a mejorar tu empresa?</p>
@@ -149,11 +152,6 @@ class Inicio extends Component<any, IInicioState> {
                             </a>
                         </div>
                     </IntersectionVisible>
-                    <div className={"inicia-tu-proyecto-boton"}>
-                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
-                            Inicia tu proyecto
-                        </Button>
-                    </div>
                 </section>
                 <section id={"proceso"}>
                     <IntersectionVisible onShow={() => this.changeActiveTab(2)}>
@@ -168,11 +166,6 @@ class Inicio extends Component<any, IInicioState> {
                         </div>
                         <img src={proceso} alt="" />
                     </IntersectionVisible>
-                    <div className={"inicia-tu-proyecto-boton"}>
-                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
-                            Inicia tu proyecto
-                        </Button>
-                    </div>
                 </section>
                 <section id={"casos-de-exito"}>
                     <IntersectionVisible onShow={() => this.changeActiveTab(3)}>
@@ -194,11 +187,6 @@ class Inicio extends Component<any, IInicioState> {
                         </div>
                         <div>{clientes}</div>
                     </IntersectionVisible>
-                    <div className={"inicia-tu-proyecto-boton clientes"}>
-                        <Button action={"/inicia-tu-proyecto"} color={"rojo"}>
-                            Inicia tu proyecto
-                        </Button>
-                    </div>
                 </section>
                 <Desktop>
                     <section id="inicia-tu-proyecto">
@@ -235,13 +223,6 @@ class Inicio extends Component<any, IInicioState> {
                                     Trabaja con nosotros para alcanzar tus
                                     objetivos
                                 </p>
-                                <Button
-                                    action={"/inicia-tu-proyecto"}
-                                    color={"rojo"}
-                                    tamano={"large"}
-                                >
-                                    Inicia tu proyecto
-                                </Button>
                             </div>
 
                             <div>
@@ -348,6 +329,10 @@ class Inicio extends Component<any, IInicioState> {
                 </section>
             </div>
         );
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, this.serviciosRef.current.offsetTop);
     }
 
     private changeActiveTab = (tab: number) => {

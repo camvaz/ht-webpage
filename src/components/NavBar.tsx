@@ -5,7 +5,7 @@ import { routes } from "../routes/Routes";
 import logo from "../images/logo.svg";
 import Button from "./Button";
 import { Desktop } from "./Responsive";
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 export class NavBar extends Component<INavBarProps> {
     render() {
@@ -21,10 +21,7 @@ export class NavBar extends Component<INavBarProps> {
                         <nav>
                             <ol>
                                 <li>
-                                    <Link
-                                        to={routes.Servicios.link}
-                                        smooth={true}
-                                    >
+                                    <Link to={routes.Servicios.link}>
                                         {routes.Servicios.name}
                                     </Link>
                                 </li>

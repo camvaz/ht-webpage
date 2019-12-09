@@ -15,7 +15,7 @@
             font-weight: normal;
         }
         .header-servicio {
-            padding: 0 60px;
+            padding: 10vh 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             @media #{$tablet} {

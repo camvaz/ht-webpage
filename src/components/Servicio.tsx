@@ -26,7 +26,14 @@ export class Servicio extends Component<RouteComponentProps> {
                     />
                 </Helmet>
                 <section className="definicion-servicio">
-                    <div className={"header-servicio"}>
+                    <div
+                        className={"header-servicio"}
+                        style={
+                            routes[servicio].name === "Desarrollo Web"
+                                ? { paddingRight: 0 }
+                                : {}
+                        }
+                    >
                         <div className={"flex-vertical-centered"}>
                             <div>
                                 <div>
@@ -45,6 +52,11 @@ export class Servicio extends Component<RouteComponentProps> {
                         <img
                             src={require(`../images/Servicios/${img}`)}
                             alt=""
+                            style={
+                                routes[servicio].name === "Desarrollo Web"
+                                    ? { marginRight: 0 }
+                                    : {}
+                            }
                         />
                     </div>
                     <div className="microservicios">

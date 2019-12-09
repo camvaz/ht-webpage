@@ -16,10 +16,12 @@ export class Logros extends Component<RouteComponentProps, any> {
         super(props);
         this.state = {
             clienteSeleccionado: "laescuadra",
-            webSeleccionada: "https://laescuadra.mx/"
+            webSeleccionada: "https://laescuadra.mx/",
+            activo: 23
         };
     }
     render() {
+        const clientes = this.getClientes();
         return (
             <div id="clientes">
                 <Helmet>
@@ -63,7 +65,7 @@ export class Logros extends Component<RouteComponentProps, any> {
                         <img src={logros} alt="" />
                     </div>
                     <div className="clientes">
-                        <div>{this.clientes}</div>
+                        <div>{clientes}</div>
                     </div>
                     {this.state.clienteSeleccionado && (
                         <div className={"cliente-container"}>
@@ -127,14 +129,16 @@ export class Logros extends Component<RouteComponentProps, any> {
     private getClientes = () => {
         let clientes = [];
         for (let image = 1; image <= 24; image++) {
+            const activo = image - 1 === this.state.activo ? "activo" : "";
             clientes.push(
                 <div
-                    className={"marcas-container"}
+                    className={`marcas-container ${activo}`}
                     key={image}
                     onClick={() =>
                         this.setState({
                             clienteSeleccionado: clientPairs[image - 1],
-                            webSeleccionada: clientPairsWeb[image - 1]
+                            webSeleccionada: clientPairsWeb[image - 1],
+                            activo: image - 1
                         })
                     }
                 >
@@ -153,5 +157,4 @@ export class Logros extends Component<RouteComponentProps, any> {
         }
         return clientes;
     };
-    private readonly clientes = this.getClientes();
 }
