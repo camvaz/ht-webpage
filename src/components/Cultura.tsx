@@ -20,6 +20,7 @@ export class Cultura extends Component<RouteComponentProps> {
                         content={routes.Cultura.description}
                     />
                 </Helmet>
+
                 <section className="definicion-servicio">
                     <div className={"header-servicio"}>
                         <div className={"flex-vertical-centered"}>
