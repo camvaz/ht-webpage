@@ -1,0 +1,83 @@
+@import "colores.scss";
+@import "responsive.scss";
+
+.mosaic {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    .left {
+        width: 466.666px;
+        img {
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 233.333px;
+        height: 500px;
+        img {
+            object-fit: fill;
+            width: 100%;
+            height: 250px;
+        }
+    }
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.full-width {
+    width: 700px;
+    height: 500px;
+    img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.two-columns {
+    width: 700px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    img {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.two-columns-rectangle {
+    width: 700px;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    img {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.full {
+    width: 700px;
+    height: auto;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.triple {
+    width: 700px;
+    height: 233.33px;
+    display: flex;
+    flex-direction: row;
+    img {
+        width: 33.33%;
+        object-fit: fill;
+    }
+}

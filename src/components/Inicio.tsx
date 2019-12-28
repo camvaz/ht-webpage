@@ -332,7 +332,8 @@ class Inicio extends Component<any, IInicioState> {
     }
 
     componentDidMount() {
-        window.scrollTo(0, this.serviciosRef.current.offsetTop);
+        if (this.props.location.hash === "#servicios")
+            window.scrollTo(0, this.serviciosRef.current.offsetTop);
     }
 
     private changeActiveTab = (tab: number) => {

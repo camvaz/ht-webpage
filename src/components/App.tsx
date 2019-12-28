@@ -9,6 +9,8 @@ import { NavBar } from "./NavBar";
 import { Blog } from "./Blog";
 import { EntradaBlog } from "./EntradaBlog";
 import { Servicio } from "./Servicio";
+import { Hector } from "./Hector";
+import { IniciaTuProyecto } from "./IniciaTuProyecto";
 
 class App extends Component {
     render = () => {
@@ -17,21 +19,17 @@ class App extends Component {
             <Router history={history}>
                 <NavBar history transparent actualSection={"Inicio"} />
                 <ScrollToTop>
-                    <div style={{ paddingTop: "80px" }}>
-                        <Route path="/" exact component={Inicio} />
-                        <Route path="/blog" exact component={Blog} />
-                        <Route path="/logros" exact component={Logros} />
-                        <Route path="/cultura" exact component={Cultura} />
-                        <Route path="/blog/:entrada" component={EntradaBlog} />
-                        <Route
-                            path="/servicios/:servicio"
-                            component={Servicio}
-                        />
-                        <Route
-                            path="/inicia-tu-proyecto"
-                            component={Servicio}
-                        />
-                    </div>
+                    <Route path="/" exact component={Inicio} />
+                    <Route path="/blog" exact component={Blog} />
+                    <Route path="/logros" exact component={Logros} />
+                    <Route path="/cultura" exact component={Cultura} />
+                    <Route path="/blog/:entrada" component={EntradaBlog} />
+                    <Route path="/servicios/:servicio" component={Servicio} />
+                    <Route
+                        path="/inicia-tu-proyecto"
+                        component={IniciaTuProyecto}
+                    />
+                    <Route path="/hectorol" component={Hector} />
                 </ScrollToTop>
             </Router>
         );

@@ -7,6 +7,8 @@ import blog from "../images/Blog.svg";
 import { IEntradaBlog } from "../types/SiteTypes";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import { routes } from "../routes/Routes";
+import Helmet from "react-helmet";
 
 interface IBlogProps {}
 
@@ -30,6 +32,14 @@ export class Blog extends React.Component<IBlogProps, IBlogState> {
     render() {
         return (
             <div id={"blog"}>
+                <Helmet>
+                    <title>{routes.Blog.title}</title>
+                    <link rel="canonical" href={routes.Blog.canonical} />
+                    <meta
+                        name="description"
+                        content={routes.Blog.description}
+                    />
+                </Helmet>
                 <section className={"definicion-blog"}>
                     <div className={"header-blog"}>
                         <div className={"flex-vertical-centered"}>

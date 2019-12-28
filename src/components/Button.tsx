@@ -27,7 +27,7 @@ class Button extends Component<IButtonProps> {
             );
         } else {
             return (
-                <div>
+                <div style={{ margin: "auto" }}>
                     <button
                         className={`boton ${this.props.color} ${
                             this.props.tamano

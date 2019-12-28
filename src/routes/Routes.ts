@@ -9,6 +9,14 @@ export const routes: IRutas = {
         name: "Inicio",
         microservicios: []
     },
+    IniciaTuProyecto: {
+        title: "Inicia tu proyecto | Headtag",
+        canonical: "http://headtag.mx/inicia-tu-proyecto",
+        description: "Inicia tu proyecto de Headtag",
+        link: "/inicia-tu-proyecto",
+        name: "Inicia tu proyecto",
+        microservicios: []
+    },
     Servicios: {
         title: "Servicios | Headtag",
         canonical: "http://headtag.mx/#servicios",

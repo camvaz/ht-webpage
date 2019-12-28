@@ -8,6 +8,7 @@ import { Footer } from "./Footer";
 import { routes } from "../routes/Routes";
 import { RouteComponentProps } from "react-router";
 import Button from "./Button";
+import ReactTooltip from "react-tooltip";
 
 export class Servicio extends Component<RouteComponentProps> {
     render() {
@@ -17,6 +18,7 @@ export class Servicio extends Component<RouteComponentProps> {
         const logo = routes[servicio].logo;
         return (
             <div id="servicio">
+                <ReactTooltip />
                 <Helmet>
                     <title>{routes[servicio].title}</title>
                     <link rel="canonical" href={routes[servicio].canonical} />
@@ -57,6 +59,7 @@ export class Servicio extends Component<RouteComponentProps> {
                                     ? { marginRight: 0 }
                                     : {}
                             }
+                            data-tip="Visita a @Hectorol"
                         />
                     </div>
                     <div className="microservicios">

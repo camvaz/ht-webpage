@@ -1,50 +1,53 @@
 {
-  "name": "ht-webpage",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/node": "^12.7.11",
-    "@types/react": "^16.9.2",
-    "@types/react-helmet": "^5.0.9",
-    "@types/react-responsive": "^8.0.0",
-    "@types/react-router-dom": "^4.3.5",
-    "@types/react-router-hash-link": "^1.2.1",
-    "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-compare-image": "^1.4.1",
-    "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1",
-    "react-intersection-visible": "^2.1.0",
-    "react-responsive": "^8.0.1",
-    "react-router-dom": "^5.1.2",
-    "react-router-hash-link": "^1.2.2",
-    "react-router-scroll-top": "^0.2.1",
-    "react-scripts": "3.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint": "^6.3.0",
-    "typescript": "^3.6.2"
-  }
+    "name": "ht-webpage",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@types/node": "^12.7.11",
+        "@types/react": "^16.9.2",
+        "@types/react-helmet": "^5.0.9",
+        "@types/react-responsive": "^8.0.0",
+        "@types/react-router-dom": "^4.3.5",
+        "@types/react-router-hash-link": "^1.2.1",
+        "css-tooltip": "^0.3.0",
+        "node-sass": "^4.12.0",
+        "react": "^16.9.0",
+        "react-anchor-link-smooth-scroll": "^1.0.12",
+        "react-compare-image": "^1.4.1",
+        "react-dom": "^16.9.0",
+        "react-helmet": "^5.2.1",
+        "react-image-lightbox": "^5.1.1",
+        "react-intersection-visible": "^2.1.0",
+        "react-responsive": "^8.0.1",
+        "react-router-dom": "^5.1.2",
+        "react-router-hash-link": "^1.2.2",
+        "react-router-scroll-top": "^0.2.1",
+        "react-scripts": "3.1.1",
+        "react-tooltip": "^3.11.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "eslint": "^6.3.0",
+        "typescript": "^3.6.2"
+    }
 }
